@@ -1,0 +1,1246 @@
+{
+  "server": "http://127.0.0.1:5410/mcp",
+  "transport": "streamable-http",
+  "generated_at": "2026-10-03T15:27:58.315216+00:00",
+  "source": "source registry; isolated runtime; no worker started",
+  "tools": [
+    {
+      "name": "inspect_douyin_own_work_order",
+      "title": null,
+      "description": "Read the authenticated account's own works in visible display order. Never replies.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "title": "inspect_douyin_own_work_orderArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "read_douyin_owned_video_comments",
+      "title": null,
+      "description": "Read only top-level comments on one positively verified owned video. Never sends or enables a watcher.",
+      "inputSchema": {
+        "properties": {
+          "video_id": {
+            "title": "Video Id",
+            "type": "string"
+          },
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "video_id"
+        ],
+        "title": "read_douyin_owned_video_commentsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "inspect_douyin_notifications",
+      "title": null,
+      "description": "Read the owned account's visible notification entry. No replies or private-message sends.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          },
+          "surface": {
+            "default": "creator",
+            "title": "Surface",
+            "type": "string"
+          }
+        },
+        "title": "inspect_douyin_notificationsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "read_douyin_notifications",
+      "title": null,
+      "description": "Read the account's current interaction notifications only; not private messages. Never replies.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "title": "read_douyin_notificationsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "inspect_douyin_notification_target",
+      "title": null,
+      "description": "Inspect the bound reply composer, optionally fill a draft. Never submits; draft is discarded on close.",
+      "inputSchema": {
+        "properties": {
+          "notification_key": {
+            "title": "Notification Key",
+            "type": "string"
+          },
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          },
+          "open_reply": {
+            "default": false,
+            "title": "Open Reply",
+            "type": "boolean"
+          },
+          "draft_text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Draft Text"
+          }
+        },
+        "required": [
+          "notification_key"
+        ],
+        "title": "inspect_douyin_notification_targetArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "prepare_douyin_owned_video_replies",
+      "title": null,
+      "description": "Freeze and draft replies to top-level comments on ONE explicitly requested owned video. Never posts or enables a scheduler.",
+      "inputSchema": {
+        "properties": {
+          "video_id": {
+            "title": "Video Id",
+            "type": "string"
+          },
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "video_id"
+        ],
+        "title": "prepare_douyin_owned_video_repliesArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "submit_douyin_owned_video_replies",
+      "title": null,
+      "description": "Submit only the frozen run explicitly authorized by the user. Keeps all standing watchers paused; uncertain sends are never repeated.",
+      "inputSchema": {
+        "properties": {
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          },
+          "expected_video_id": {
+            "title": "Expected Video Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "expected_video_id"
+        ],
+        "title": "submit_douyin_owned_video_repliesArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_douyin_owned_video_reply_run",
+      "title": null,
+      "description": "Read this one-video run's frozen targets, drafts and at-most-once submission evidence.",
+      "inputSchema": {
+        "properties": {
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id"
+        ],
+        "title": "get_douyin_owned_video_reply_runArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "configure_douyin_notifications",
+      "title": null,
+      "description": "Configure only top-level comments on the account's own videos. No nested replies or private messages; disabled by default.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          },
+          "interval_seconds": {
+            "default": 300,
+            "title": "Interval Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "configure_douyin_notificationsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "set_douyin_notifications_enabled",
+      "title": null,
+      "description": "Enable or pause user-authorized notification replies. Disables overlapping single-work watchers for this account.",
+      "inputSchema": {
+        "properties": {
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean"
+          },
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "title": "set_douyin_notifications_enabledArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "run_douyin_notifications_once",
+      "title": null,
+      "description": "Scan notifications; send only with an enabled standing permission. Unknown submits are never resent.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          },
+          "send": {
+            "default": false,
+            "title": "Send",
+            "type": "boolean"
+          }
+        },
+        "title": "run_douyin_notifications_onceArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "preview_douyin_notification_reply",
+      "title": null,
+      "description": "Read actual original conversation and generate a draft only. Never submits or changes send state.",
+      "inputSchema": {
+        "properties": {
+          "notification_key": {
+            "title": "Notification Key",
+            "type": "string"
+          },
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "notification_key"
+        ],
+        "title": "preview_douyin_notification_replyArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_douyin_notifications_status",
+      "title": null,
+      "description": "Read notification watcher status and recent public interactions, never private messages or credentials.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "default": "douyin-main",
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "title": "get_douyin_notifications_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "configure_douyin_autoreply",
+      "title": null,
+      "description": "Create/update a disabled-by-default auto-reply job for one owned published video.\n\n    Does not send comments. First complete scan baselines existing comments; only\n    subsequently observed comments are eligible. None means unlimited daily replies.\n    ",
+      "inputSchema": {
+        "properties": {
+          "publish_task_id": {
+            "title": "Publish Task Id",
+            "type": "string"
+          },
+          "expected_video_id": {
+            "title": "Expected Video Id",
+            "type": "string"
+          },
+          "interval_seconds": {
+            "default": 300,
+            "title": "Interval Seconds",
+            "type": "integer"
+          },
+          "daily_reply_limit": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Daily Reply Limit"
+          }
+        },
+        "required": [
+          "publish_task_id",
+          "expected_video_id"
+        ],
+        "title": "configure_douyin_autoreplyArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "preview_douyin_auto_reply",
+      "title": null,
+      "description": "Call the configured Qwen/GLM for one sample decision. Never posts to Douyin.",
+      "inputSchema": {
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "preview_douyin_auto_replyArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "run_douyin_autoreply_once",
+      "title": null,
+      "description": "Run a bounded scan. send=True can reply only if the job is explicitly enabled.\n\n    First scan only records a baseline. Does not override pauses, identity checks,\n    quotas or submission guards. False never calls the model or posts.\n    ",
+      "inputSchema": {
+        "properties": {
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "send": {
+            "default": false,
+            "title": "Send",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "title": "run_douyin_autoreply_onceArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "set_douyin_autoreply_enabled",
+      "title": null,
+      "description": "Enable/pause standing auto-reply permission for the fixed video.\n\n    Enable only when the human has explicitly authorized automatic replies. Requires\n    a complete initial baseline and configured model. New comments use the approved\n    public context/style; uncertain sends are checked read-only and never repeated.\n    ",
+      "inputSchema": {
+        "properties": {
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "job_id",
+          "enabled"
+        ],
+        "title": "set_douyin_autoreply_enabledArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_douyin_autoreply_status",
+      "title": null,
+      "description": "Read safe model metadata, enabled jobs, counters, handoff items and recent decisions.",
+      "inputSchema": {
+        "properties": {
+          "job_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Job Id"
+          }
+        },
+        "title": "get_douyin_autoreply_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "read_douyin_comments",
+      "title": null,
+      "description": "Read bounded top-level comments and emoji alt text; no model or posting. Reports completeness.",
+      "inputSchema": {
+        "properties": {
+          "publish_task_id": {
+            "title": "Publish Task Id",
+            "type": "string"
+          },
+          "expected_video_id": {
+            "title": "Expected Video Id",
+            "type": "string"
+          },
+          "max_scrolls": {
+            "default": 5,
+            "title": "Max Scrolls",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "publish_task_id",
+          "expected_video_id"
+        ],
+        "title": "read_douyin_commentsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "inspect_douyin_reply_entry",
+      "title": null,
+      "description": "Read one existing comment's reply composer. Does not fill or send any content.",
+      "inputSchema": {
+        "properties": {
+          "publish_task_id": {
+            "title": "Publish Task Id",
+            "type": "string"
+          },
+          "expected_video_id": {
+            "title": "Expected Video Id",
+            "type": "string"
+          },
+          "comment_key": {
+            "title": "Comment Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "publish_task_id",
+          "expected_video_id",
+          "comment_key"
+        ],
+        "title": "inspect_douyin_reply_entryArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "inspect_douyin_published_video_analytics",
+      "title": null,
+      "description": "Read overview, traffic and audience analytics for one verified owned published work. No edits or posts.",
+      "inputSchema": {
+        "properties": {
+          "publish_task_id": {
+            "title": "Publish Task Id",
+            "type": "string"
+          },
+          "expected_video_id": {
+            "title": "Expected Video Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "publish_task_id",
+          "expected_video_id"
+        ],
+        "title": "inspect_douyin_published_video_analyticsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "inspect_douyin_comments",
+      "title": null,
+      "description": "Read visible DOM for one previously PUBLISHED Douyin work in its existing account.\n\n    Reuses the service-owned locked session. Never posts, exports credentials, or\n    accepts arbitrary URLs/selectors/scripts. open_work only opens the matched work.\n    ",
+      "inputSchema": {
+        "properties": {
+          "publish_task_id": {
+            "title": "Publish Task Id",
+            "type": "string"
+          },
+          "open_work": {
+            "default": false,
+            "title": "Open Work",
+            "type": "boolean"
+          },
+          "open_comments": {
+            "default": false,
+            "title": "Open Comments",
+            "type": "boolean"
+          },
+          "public_view": {
+            "default": false,
+            "title": "Public View",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "publish_task_id"
+        ],
+        "title": "inspect_douyin_commentsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "prepare_douyin_comment",
+      "title": null,
+      "description": "Freeze one top-level comment for a previously published own Douyin video. No posting.",
+      "inputSchema": {
+        "properties": {
+          "publish_task_id": {
+            "title": "Publish Task Id",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "publish_task_id",
+          "text",
+          "idempotency_key"
+        ],
+        "title": "prepare_douyin_commentArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_douyin_comment_status",
+      "title": null,
+      "description": "Read durable single-comment state. UNKNOWN_RESULT is not permission to retry.",
+      "inputSchema": {
+        "properties": {
+          "comment_task_id": {
+            "title": "Comment Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "comment_task_id"
+        ],
+        "title": "get_douyin_comment_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "submit_douyin_comment",
+      "title": null,
+      "description": "Send the exact frozen top-level comment ONCE on the user's previously published work.\n\n    Requires explicit user authorization for that text and work. Uses the existing\n    publisher account/session, journals before clicking, and verifies after reload.\n    An attempted/unknown task never clicks again; use recheck_douyin_comment instead.\n    ",
+      "inputSchema": {
+        "properties": {
+          "comment_task_id": {
+            "title": "Comment Task Id",
+            "type": "string"
+          },
+          "expected_video_id": {
+            "title": "Expected Video Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "comment_task_id",
+          "expected_video_id"
+        ],
+        "title": "submit_douyin_commentArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "recheck_douyin_comment",
+      "title": null,
+      "description": "Read the same work's comments again. Never sends or retries a comment.",
+      "inputSchema": {
+        "properties": {
+          "comment_task_id": {
+            "title": "Comment Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "comment_task_id"
+        ],
+        "title": "recheck_douyin_commentArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "list_accounts",
+      "title": null,
+      "description": "List local account aliases without credentials. UNKNOWN is not logged-in proof.",
+      "inputSchema": {
+        "properties": {},
+        "title": "list_accountsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "list_accountsOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "list_publish_channels",
+      "title": null,
+      "description": "Report implemented adapters separately from real publication acceptance.",
+      "inputSchema": {
+        "properties": {},
+        "title": "list_publish_channelsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "list_publish_channelsOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "prepare_publish",
+      "title": null,
+      "description": "Freeze one ordered batch; default includes ALL three platforms, even logged-out ones.\n\n    No upload occurs here. submit_publish triggers a fresh all-account preflight barrier.\n    declaration is an exact supported self-declaration from list_publish_channels;\n    \"原创\" is not a supported self-declaration. Never map or clear it automatically.\n    ",
+      "inputSchema": {
+        "$defs": {
+          "SelfDeclaration": {
+            "enum": [
+              "",
+              "内容由AI生成",
+              "内容为转载信息",
+              "内容为个人观点或见解"
+            ],
+            "title": "SelfDeclaration",
+            "type": "string"
+          }
+        },
+        "properties": {
+          "media_path": {
+            "title": "Media Path",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "declaration": {
+            "$ref": "#/$defs/SelfDeclaration"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Tags",
+            "type": "array"
+          },
+          "channels": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Channels"
+          },
+          "accounts": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Accounts"
+          }
+        },
+        "required": [
+          "media_path",
+          "title",
+          "description",
+          "declaration",
+          "tags"
+        ],
+        "title": "prepare_publishArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "delete_publish_task",
+      "title": null,
+      "description": "Delete an unsubmitted batch, standalone task, or frozen plan by its MCP ID.\n\n    Requires explicit user deletion intent. Batch children require the batch ID.\n    Busy, published, or attempted/unknown-result tasks are rejected. Never deletes\n    media files or platform content. NOT_FOUND does not prove a remote non-publication.\n    Caller must synchronize its local record only after a confirmed DELETED result.\n    Success is durably audited. Repeating the exact target returns the original receipt.\n    get_publish_batch/get_publish_status can recover that receipt read-only after a timeout.\n    ",
+      "inputSchema": {
+        "properties": {
+          "target_id": {
+            "title": "Target Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_id"
+        ],
+        "title": "delete_publish_taskArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "preflight_publish",
+      "title": null,
+      "description": "Read-only checks of every account and video upload page; never uploads or submits.",
+      "inputSchema": {
+        "properties": {
+          "plan_id": {
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plan_id"
+        ],
+        "title": "preflight_publishArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_publish_batch",
+      "title": null,
+      "description": "Independent target status, per-account checks, login sessions, and partial completion.",
+      "inputSchema": {
+        "properties": {
+          "batch_id": {
+            "title": "Batch Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "batch_id"
+        ],
+        "title": "get_publish_batchArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "resume_publish_batch",
+      "title": null,
+      "description": "Resume unsubmitted targets independently; attempted targets only reconcile, never repeat a click.",
+      "inputSchema": {
+        "properties": {
+          "batch_id": {
+            "title": "Batch Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "batch_id"
+        ],
+        "title": "resume_publish_batchArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "recover_uncertain_publish",
+      "title": null,
+      "description": "Explicit one-shot retry of an old UNKNOWN_RESULT after fresh reconciliation.\n\n    Requires a separate confirmation acknowledging possible duplicate publication.\n    Keeps the original task/batch and journals the uncertain attempt. Does NOT\n    certify non-publication. Reusing request_id never grants another attempt.\n    Currently supported when a fresh WeChat management observation is available.\n    ",
+      "inputSchema": {
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "expected_attempted_at": {
+            "title": "Expected Attempted At",
+            "type": "string"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "acknowledge_duplicate_risk": {
+            "default": false,
+            "title": "Acknowledge Duplicate Risk",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "task_id",
+          "expected_attempted_at",
+          "request_id",
+          "reason"
+        ],
+        "title": "recover_uncertain_publishArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "submit_publish",
+      "title": null,
+      "description": "Authorize the frozen batch for REAL publication, independently after each target passes preflight.",
+      "inputSchema": {
+        "properties": {
+          "plan_id": {
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plan_id",
+          "idempotency_key"
+        ],
+        "title": "submit_publishArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_publish_status",
+      "title": null,
+      "description": "Return durable state, or the original DELETED receipt for an exact removed task/plan ID.\n\n    No deletion occurs here. Missing targets without a recorded receipt remain errors.\n    UNKNOWN_RESULT must be reconciled before any retry.\n    ",
+      "inputSchema": {
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id"
+        ],
+        "title": "get_publish_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_publish_evidence",
+      "title": null,
+      "description": "Return only matching work evidence, never cookies or page dumps.",
+      "inputSchema": {
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id"
+        ],
+        "title": "get_publish_evidenceArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "retry_preparation",
+      "title": null,
+      "description": "Retry only a failure proven to have happened BEFORE any publish click.",
+      "inputSchema": {
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id"
+        ],
+        "title": "retry_preparationArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "recheck_publish_result",
+      "title": null,
+      "description": "Read-only DOM verification. force also inspects completed work without changing its saved result.",
+      "inputSchema": {
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "force": {
+            "default": false,
+            "title": "Force",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "task_id"
+        ],
+        "title": "recheck_publish_resultArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "check_account_status",
+      "title": null,
+      "description": "Check identity using the same locked profile used for publication.",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "title": "Account Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_id"
+        ],
+        "title": "check_account_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "start_account_login",
+      "title": null,
+      "description": "Open the service-owned official browser; return a fixed local session page.\n\n    Successful login also checks the video publish page before saving and releasing its profile.\n    ",
+      "inputSchema": {
+        "properties": {
+          "account_id": {
+            "title": "Account Id",
+            "type": "string"
+          },
+          "visible": {
+            "default": true,
+            "title": "Visible",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "account_id"
+        ],
+        "title": "start_account_loginArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_login_status",
+      "title": null,
+      "description": "Return login state and identity result, never QR bytes or credentials.",
+      "inputSchema": {
+        "properties": {
+          "session_id": {
+            "title": "Session Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "session_id"
+        ],
+        "title": "get_login_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_service_status",
+      "title": null,
+      "description": "Check process-owned worker health.",
+      "inputSchema": {
+        "properties": {},
+        "title": "get_service_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    }
+  ]
+}

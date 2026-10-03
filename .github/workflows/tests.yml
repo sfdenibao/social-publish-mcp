@@ -1,0 +1,19 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        shell: pwsh
+        run: |
+          Copy-Item conf.example.py conf.py
+          python -m pip install -e ".[mcp,test]"
+      - name: Test isolated fixtures
+        run: python -m pytest tests -q

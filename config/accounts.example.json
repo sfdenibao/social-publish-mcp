@@ -1,0 +1,30 @@
+[
+  {
+    "id": "douyin-main",
+    "channel": "douyin",
+    "display_name": "YOUR_EXACT_ACCOUNT_NAME",
+    "profile": "browser_profiles/douyin-main",
+    "session_file": "runtime/sessions/douyin-main.json",
+    "default": true,
+    "public_identity": {
+      "handle": "YOUR_PUBLIC_DOUYIN_HANDLE",
+      "profile_path": "/user/YOUR_PUBLIC_PROFILE_ID"
+    }
+  },
+  {
+    "id": "wechat-main",
+    "channel": "wechat_channels",
+    "display_name": "YOUR_EXACT_ACCOUNT_NAME",
+    "profile": "browser_profiles/wechat-main",
+    "session_file": "runtime/sessions/wechat-main.json",
+    "default": true
+  },
+  {
+    "id": "xhs-main",
+    "channel": "xiaohongshu",
+    "display_name": "YOUR_EXACT_ACCOUNT_NAME",
+    "profile": "browser_profiles/xhs-main",
+    "session_file": "runtime/sessions/xhs-main.json",
+    "default": true
+  }
+]

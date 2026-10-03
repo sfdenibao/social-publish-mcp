@@ -1,0 +1,8 @@
+{
+  "provider": "zai",
+  "base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "model": "glm-4.7-flash",
+  "api_key": "REPLACE_WITH_YOUR_KEY",
+  "temperature": 0.5,
+  "max_tokens": 512
+}
